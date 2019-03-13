@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tema_1</string>
+    <string name="btn_f1a1">Go to Activity 2 !</string>
+    <string name="btn_f1a2">Add Fragment F2A2 !</string>
+    <string name="btn1_f2a2">Replace F2A2 </string>
+    <string name="btn2_f2a2">Remove F1A2 </string>
+    <string name="btn3_f2a2">Close activity</string>
+</resources>
