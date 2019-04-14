@@ -4,18 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="20dp"
+    tools:context=".activities.MainActivity">
 
+    <Button
+        android:id="@+id/add_book_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/add_book"
+        app:layout_constraintBottom_toTopOf="@+id/rv_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 
-    <fragment android:name="com.example.tema_1.F1A1"
-        android:id="@+id/f1a1"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+    <FrameLayout
+        android:id="@+id/rv_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/add_book_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

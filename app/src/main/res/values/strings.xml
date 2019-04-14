@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name">Tema_1_2</string>
-    <string name="btn2_f1a1">Add user</string>
-    <string name="btn3_f1a1">Remove user</string>
-    <string name="btn_f1a1">Go to activity 2 !</string>
-    <string name="btn_f1a2">Add Fragment F2A2 !</string>
-    <string name="btn1_f2a2">Replace F2A2 </string>
-    <string name="btn2_f2a2">Remove F1A2 </string>
-    <string name="btn3_f2a2">Close activity</string>
+    <string name="app_name">Zi sa moara mata</string>
+
+    <string name="add_book">Add a new book</string>
+    <string name="remove_book">Remove this book</string>
+    <string name="title">Title</string>
+    <string name="author">Author</string>
+    <string name="year">Year</string>
 </resources>

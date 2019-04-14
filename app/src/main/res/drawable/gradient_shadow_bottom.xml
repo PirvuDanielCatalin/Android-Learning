@@ -5,6 +5,6 @@
         android:angle="270"
         android:centerColor="@color/colorPrimary"
         android:endColor="@android:color/transparent"
-        android:startColor="@android:color/transparent"/>
-    <size android:height="50dp"/>
+        android:startColor="@android:color/transparent" />
+    <size android:height="50dp" />
 </shape>
