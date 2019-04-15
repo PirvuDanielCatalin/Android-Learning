@@ -75,7 +75,7 @@ public class RecyclerViewFragment extends Fragment {
                             item.setId(index + 1);
                             booksFromJson.add(item);
                         } catch (JSONException ex) {
-                            Toast.makeText(getContext(), "Json parsing error: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Json parsing error: " + ex.getMessage(), Toast.LENGTH_LONG).show();
                         }
                 }
 
@@ -116,7 +116,7 @@ public class RecyclerViewFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "Volley error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Volley error: " + error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 

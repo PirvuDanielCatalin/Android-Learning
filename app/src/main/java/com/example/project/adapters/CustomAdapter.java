@@ -98,8 +98,11 @@ public class CustomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                         }
                     }
                 });
+
                 if (checkDB)
                     favoriteButton.setBackgroundResource(R.drawable.star_f);
+                else
+                    favoriteButton.setBackgroundResource(R.drawable.star_uf);
 
                 break;
         }

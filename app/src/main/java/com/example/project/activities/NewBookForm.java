@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.project.R;
+import com.example.project.helpers.Constants;
 import com.example.project.models.Book;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,14 +30,21 @@ public class NewBookForm extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String title = title_input.getText().toString();
                 String author = author_input.getText().toString();
-                int year = Integer.parseInt(year_input.getText().toString());
-                Book book = new Book(title, author, year);
+                String yearString = year_input.getText().toString();
 
-                Intent intent = new Intent(context, MainActivity.class);
-                intent.putExtra("book", book);
-                startActivity(intent);
+                if (!title.isEmpty() && !author.isEmpty() && !yearString.isEmpty()) {
+                    int year = Integer.parseInt(yearString);
+                    Book book = new Book(title, author, year);
+
+                    Intent intent = new Intent(context, MainActivity.class);
+                    intent.putExtra("book", book);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(context, Constants.ALL_REQUIRED, Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

@@ -23,7 +23,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:background="@drawable/btn_smk"
+            android:background="@drawable/button_selector"
             android:text="@string/remove_book" />
 
         <Button

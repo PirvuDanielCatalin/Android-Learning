@@ -6,4 +6,6 @@
     <string name="title">Title</string>
     <string name="author">Author</string>
     <string name="year">Year</string>
+
+    <string name="no_internet">Check your internet connection and restart the app!</string>
 </resources>
