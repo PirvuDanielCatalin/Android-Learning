@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.project.R;
@@ -73,7 +74,6 @@ public class CustomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             case TYPE_BOOK:
                 TextView textViewBook = ((ViewHolderBook) viewHolder).titleTextView;
                 textViewBook.setText(item.getTitle());
-
                 textViewBook.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -87,8 +87,20 @@ public class CustomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 });
 
                 Button favoriteButton = ((ViewHolderBook) viewHolder).favoriteButton;
+                favoriteButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (context.getClass().equals(MainActivity.class)) {
+                            Intent intent = new Intent(context, ShowBookForm.class);
+                            intent.putExtra("book", item);
+                            context.startActivity(intent);
+                            ((MainActivity) context).finish();
+                        }
+                    }
+                });
                 if (checkDB)
                     favoriteButton.setBackgroundResource(R.drawable.star_f);
+
                 break;
         }
     }
@@ -106,6 +118,7 @@ public class CustomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         // for any view that will be set as you render a row
         public TextView titleTextView;
         public Button favoriteButton;
+        public LinearLayout linearLayout;
 
         // We also create a constructor that accepts the entire item row
         // and does the view lookups to find each subview
@@ -116,6 +129,7 @@ public class CustomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
             titleTextView = itemView.findViewById(R.id.rv_item_tv);
             favoriteButton = itemView.findViewById(R.id.rv_item_star);
+            linearLayout = itemView.findViewById(R.id.rv_item_ll);
         }
     }
 }

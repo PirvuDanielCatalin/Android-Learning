@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Zi sa moara mata</string>
+    <string name="app_name">Books Everywhere</string>
 
     <string name="add_book">Add a new book</string>
     <string name="remove_book">Remove this book</string>
