@@ -27,27 +27,6 @@ public class ShowBookForm extends AppCompatActivity {
 
         final Book book = (Book) getIntent().getSerializableExtra("book");
 
-        TextView title_tv = findViewById(R.id.title_tv);
-        title_tv.setText(book.title);
-
-        TextView author_tv = findViewById(R.id.author_tv);
-        author_tv.setText(book.author);
-
-        TextView year_tv = findViewById(R.id.year_tv);
-        year_tv.setText(book.year + "");
-
-        Button remove_btn = findViewById(R.id.remove_btn);
-        remove_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, MainActivity.class);
-                intent.putExtra("id", book.id);
-                context.startActivity(intent);
-            }
-        });
-
-        final Button star_btn = findViewById(R.id.star_btn);
-
         final BookRepository bookRepository = new BookRepository(this);
 
         final Book checkDB = bookRepository.getById(book.getId(), new OnBookRepositoryActionListener() {
@@ -61,6 +40,41 @@ public class ShowBookForm extends AppCompatActivity {
 
             }
         });
+
+        TextView title_tv = findViewById(R.id.title_tv);
+        title_tv.setText(book.title);
+
+        TextView author_tv = findViewById(R.id.author_tv);
+        author_tv.setText(book.author);
+
+        TextView year_tv = findViewById(R.id.year_tv);
+        year_tv.setText(book.year + "");
+
+        Button remove_btn = findViewById(R.id.remove_btn);
+        remove_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkDB != null) {
+                    bookRepository.delete(checkDB, new OnBookRepositoryActionListener() {
+                        @Override
+                        public void actionSuccess() {
+
+                        }
+
+                        @Override
+                        public void actionFailed() {
+
+                        }
+                    });
+                }
+
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.putExtra("id", book.id);
+                context.startActivity(intent);
+            }
+        });
+
+        final Button star_btn = findViewById(R.id.star_btn);
 
         if (checkDB != null)
             star_btn.setBackgroundResource(R.drawable.star_f);

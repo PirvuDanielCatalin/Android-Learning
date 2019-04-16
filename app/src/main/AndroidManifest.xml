@@ -16,15 +16,21 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="com.example.project.activities.MainActivity">
+        <activity
+            android:name="com.example.project.activities.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.project.activities.NewBookForm" />
-        <activity android:name="com.example.project.activities.ShowBookForm" />
+        <activity
+            android:name="com.example.project.activities.NewBookForm"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.project.activities.ShowBookForm"
+            android:screenOrientation="portrait" />
 
     </application>
 
