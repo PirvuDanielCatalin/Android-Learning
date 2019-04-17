@@ -8,4 +8,7 @@
     <string name="year">Year</string>
 
     <string name="no_internet">Check your internet connection and restart the app!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
