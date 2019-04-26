@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         String date = Calendar.getInstance().getTime().toString();
         editor.putString("Date", date);
+        editor.apply();
     }
 }
 
